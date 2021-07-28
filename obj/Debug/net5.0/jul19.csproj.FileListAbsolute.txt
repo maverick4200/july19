@@ -1,0 +1,16 @@
+/mnt/c/Users/warre/Source/Repos/july19/bin/Debug/net5.0/jul19
+/mnt/c/Users/warre/Source/Repos/july19/bin/Debug/net5.0/jul19.deps.json
+/mnt/c/Users/warre/Source/Repos/july19/bin/Debug/net5.0/jul19.runtimeconfig.json
+/mnt/c/Users/warre/Source/Repos/july19/bin/Debug/net5.0/jul19.runtimeconfig.dev.json
+/mnt/c/Users/warre/Source/Repos/july19/bin/Debug/net5.0/jul19.dll
+/mnt/c/Users/warre/Source/Repos/july19/bin/Debug/net5.0/ref/jul19.dll
+/mnt/c/Users/warre/Source/Repos/july19/bin/Debug/net5.0/jul19.pdb
+/mnt/c/Users/warre/Source/Repos/july19/obj/Debug/net5.0/jul19.csproj.AssemblyReference.cache
+/mnt/c/Users/warre/Source/Repos/july19/obj/Debug/net5.0/jul19.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/Users/warre/Source/Repos/july19/obj/Debug/net5.0/jul19.AssemblyInfoInputs.cache
+/mnt/c/Users/warre/Source/Repos/july19/obj/Debug/net5.0/jul19.AssemblyInfo.cs
+/mnt/c/Users/warre/Source/Repos/july19/obj/Debug/net5.0/jul19.csproj.CoreCompileInputs.cache
+/mnt/c/Users/warre/Source/Repos/july19/obj/Debug/net5.0/jul19.dll
+/mnt/c/Users/warre/Source/Repos/july19/obj/Debug/net5.0/ref/jul19.dll
+/mnt/c/Users/warre/Source/Repos/july19/obj/Debug/net5.0/jul19.pdb
+/mnt/c/Users/warre/Source/Repos/july19/obj/Debug/net5.0/jul19.genruntimeconfig.cache

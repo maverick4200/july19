@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kareonadavis/Source/july19/jul19 copy dupe/jul19.csproj": {}
+    "/mnt/c/Users/warre/Source/Repos/july19/jul19.csproj": {}
   },
   "projects": {
-    "/Users/kareonadavis/Source/july19/jul19 copy dupe/jul19.csproj": {
+    "/mnt/c/Users/warre/Source/Repos/july19/jul19.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kareonadavis/Source/july19/jul19 copy dupe/jul19.csproj",
+        "projectUniqueName": "/mnt/c/Users/warre/Source/Repos/july19/jul19.csproj",
         "projectName": "jul19",
-        "projectPath": "/Users/kareonadavis/Source/july19/jul19 copy dupe/jul19.csproj",
-        "packagesPath": "/Users/kareonadavis/.nuget/packages/",
-        "outputPath": "/Users/kareonadavis/Source/july19/jul19 copy dupe/obj/",
+        "projectPath": "/mnt/c/Users/warre/Source/Repos/july19/jul19.csproj",
+        "packagesPath": "/home/wtvamp/.nuget/packages/",
+        "outputPath": "/mnt/c/Users/warre/Source/Repos/july19/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/kareonadavis/.nuget/NuGet/NuGet.Config"
+          "/home/wtvamp/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
         }
       }
     }
