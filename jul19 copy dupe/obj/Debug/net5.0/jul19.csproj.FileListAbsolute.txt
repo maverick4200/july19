@@ -13,3 +13,18 @@
 /Users/jnava4200/Documents/jul19/obj/Debug/net5.0/ref/jul19.dll
 /Users/jnava4200/Documents/jul19/obj/Debug/net5.0/jul19.pdb
 /Users/jnava4200/Documents/jul19/obj/Debug/net5.0/jul19.genruntimeconfig.cache
+/Users/kareonadavis/Source/july19/jul19 copy dupe/bin/Debug/net5.0/jul19.deps.json
+/Users/kareonadavis/Source/july19/jul19 copy dupe/bin/Debug/net5.0/jul19.runtimeconfig.json
+/Users/kareonadavis/Source/july19/jul19 copy dupe/bin/Debug/net5.0/jul19.runtimeconfig.dev.json
+/Users/kareonadavis/Source/july19/jul19 copy dupe/bin/Debug/net5.0/jul19.dll
+/Users/kareonadavis/Source/july19/jul19 copy dupe/bin/Debug/net5.0/ref/jul19.dll
+/Users/kareonadavis/Source/july19/jul19 copy dupe/bin/Debug/net5.0/jul19.pdb
+/Users/kareonadavis/Source/july19/jul19 copy dupe/obj/Debug/net5.0/jul19.csproj.AssemblyReference.cache
+/Users/kareonadavis/Source/july19/jul19 copy dupe/obj/Debug/net5.0/jul19.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kareonadavis/Source/july19/jul19 copy dupe/obj/Debug/net5.0/jul19.AssemblyInfoInputs.cache
+/Users/kareonadavis/Source/july19/jul19 copy dupe/obj/Debug/net5.0/jul19.AssemblyInfo.cs
+/Users/kareonadavis/Source/july19/jul19 copy dupe/obj/Debug/net5.0/jul19.csproj.CoreCompileInputs.cache
+/Users/kareonadavis/Source/july19/jul19 copy dupe/obj/Debug/net5.0/jul19.dll
+/Users/kareonadavis/Source/july19/jul19 copy dupe/obj/Debug/net5.0/ref/jul19.dll
+/Users/kareonadavis/Source/july19/jul19 copy dupe/obj/Debug/net5.0/jul19.pdb
+/Users/kareonadavis/Source/july19/jul19 copy dupe/obj/Debug/net5.0/jul19.genruntimeconfig.cache

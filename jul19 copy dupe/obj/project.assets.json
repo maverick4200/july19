@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "/Users/jnava4200/.nuget/packages/": {}
+    "/Users/kareonadavis/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jnava4200/Documents/jul19/jul19.csproj",
+      "projectUniqueName": "/Users/kareonadavis/Source/july19/jul19 copy dupe/jul19.csproj",
       "projectName": "jul19",
-      "projectPath": "/Users/jnava4200/Documents/jul19/jul19.csproj",
-      "packagesPath": "/Users/jnava4200/.nuget/packages/",
-      "outputPath": "/Users/jnava4200/Documents/jul19/obj/",
+      "projectPath": "/Users/kareonadavis/Source/july19/jul19 copy dupe/jul19.csproj",
+      "packagesPath": "/Users/kareonadavis/.nuget/packages/",
+      "outputPath": "/Users/kareonadavis/Source/july19/jul19 copy dupe/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/jnava4200/.nuget/NuGet/NuGet.Config"
+        "/Users/kareonadavis/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
