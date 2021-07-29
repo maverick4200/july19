@@ -113,6 +113,7 @@ namespace jul19
                         if(compList[5].Keywords.Contains(Keywords))
 
 
+                        //Computer oFound = compList.Find(comp => comp.Name.Equals(sSearch)); //for computer name    
                         if (oFound != null)
                         {
                             Console.WriteLine("Found it: " + oFound.getData());
