@@ -46,7 +46,7 @@ namespace jul19
             energyList.Add(new PowerPlant(300, "Kwh", 400, 30));
             // Type your username and press enter
             Console.WriteLine("Create password");
-
+            // the following lines of code is for password.
             //Create a string variable and get us1er input from the keyboard and store it in the variable
             string password = Console.ReadLine();
 

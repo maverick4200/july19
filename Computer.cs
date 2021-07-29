@@ -21,7 +21,7 @@ public class Computer : StoreItem {
 //selling
 //increasing or decreasing price
 
-
+//method is still needed.
 
 
 }
