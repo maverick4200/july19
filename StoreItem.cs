@@ -16,6 +16,5 @@ public class StoreItem {
         this.Price = this.Price * 0.70M; 
         return this.Price;
     }
-//Im on Storeitem
 
 }
