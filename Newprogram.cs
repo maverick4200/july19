@@ -87,6 +87,8 @@ namespace jul19
             string InputSearch; // Input user input search
             string sSearch;
             string InputCart; //Input for cart
+            string Inputkey; // input for keywords
+            string Keywords;
             bool endwhile = false; 
             bool endSearch = false;
             bool endbook = false;
@@ -106,13 +108,12 @@ namespace jul19
                         Console.WriteLine("What would you like to search?");
                         sSearch = Console.ReadLine();
                    
-                        Computer oFound = compList.Find(comp => comp.Color.Equals(sSearch)); //for computer name   
-                        /*if (compList.contains(new comp("silver", "Windows", "AMD", "black", "red", "rose gold", "blue", "pink", "Apple))  
-                            
-                        
-                        
-                        */
-
+                        Computer oFound = compList.Find(comp => compList[5].Equals(sSearch)); //contain method   
+                         Inputkey = Console.ReadLine();
+                        if (InputKey((compList[5].Keywords));
+                        (compList[5].Keywords.Contains(Keywords)){
+                            Console.WriteLine(compList[6].Name,compList[6].Price);
+                        }
 
 
                         if (oFound != null)
