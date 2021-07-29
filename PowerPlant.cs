@@ -2,8 +2,7 @@ public class PowerPlant : StoreItem {
 
     //amount of workers
 
-    double amountInKWh;
-     string unitOfmeasurement; //kWh
+
     //double cost; //cost per kWh
 
     //encapsulation
@@ -15,19 +14,18 @@ public class PowerPlant : StoreItem {
 
     
 //encapsulation
-    
-    public string UnitOfmeasurement { get => unitOfmeasurement; set => unitOfmeasurement = value; }
-    public double AmountInKWh { get => amountInKWh; set => amountInKWh = value; }
 
 
     //constructor2
-    public PowerPlant(double amountInKWh, string unitOfmeasurement, decimal price, int itemNum){
-        this.AmountInKWh = amountInKWh;
-        this.UnitOfmeasurement = unitOfmeasurement;
+    public PowerPlant(string amountInKWh, decimal price, int itemNum){
+        this.Name = amountInKWh;
         this.Price = price;
         this.ItemNum = itemNum;
     }
-    
+
+    public string getData(){
+        return Name + Price + ItemNum;
+    }   
 
 }
 
