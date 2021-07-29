@@ -11,12 +11,13 @@ namespace jul19
             List<Book> bookList = new List<Book>();
             List<PowerPlant> energyList = new List<PowerPlant>();
             //laptops             
-            compList.Add(new Computer("MacBook Air",900, "Apple", "New with M1 chip", "2021", 1)); //index 0
-            compList.Add(new Computer("Surface Pro", 1400, "Windows", "laptop and tablet in one","2021", 2)); //index 1
-            compList.Add(new Computer("Microsoft", 600, "Windows", "Touch screen ", "2020", 3)); //index 2
-            compList.Add(new Computer("Razer Blade 15", 2700, "Windows","Advanced laptop w/ RTX 2070", "2021", 4)); // index 3
-            compList.Add(new Computer("HP Envy", 1029 , "Window", "11th Generation Intel", "2019", 5)); // index 4
-            compList.Add(new Computer("Asus ROG Zephyrus", 1500, "Windows", "5700xt + Ryzen 5600x", "2021", 6));;  // index 5           
+            compList.Add(new Computer("MacBook Air","rose gold",900, "Apple", "New with M1 chip", "2021", 1)); 
+            compList.Add(new Computer("Surface Pro",  "red", 700, "Windows", "laptop and tablet in one","2021", 2)); 
+            compList.Add(new Computer("Microsoft", "black",600, "Windows", "Touch screen ", "2020", 3)); 
+            compList.Add(new Computer("Razer Blade 15", "blue", 700, "Windows","Advanced laptop w/ RTX 2070", "2021", 4)); 
+            compList.Add(new Computer("HP Envy"," pink", 529 , "Window", "11th Generation Intel", "2019", 5)); 
+            compList.Add(new Computer("Asus ROG Zephyrus","silver", 500, "Windows", "5700xt + Ryzen 5600x", "2021", 6)); 
+            //compList[5].Keywords = new List<string>() {"silver", "Windows", "AMD", "black", "red", "rose gold", "blue", "pink", "Apple" }; //no limit        
             //basketball game tickets
             basketList.Add(new Basketball("Chicago Bulls vs Phoenix Suns", 250, "July 30", 109, 30, 7));
             basketList.Add(new Basketball("phoenix suns vs Bucks", 150, "August 2", 80, 20, 8));
@@ -39,14 +40,14 @@ namespace jul19
             bookList.Add(new Book("Giovanni's Room", 30, "James Baldwin","paperback",24)); //8
             bookList.Add(new Book("The Hate U Give" , 11, "Angie Thomas","hardcover",25)); //9
             //powerplant & energy          
-            energyList.Add(new PowerPlant(100, "KWh", 200, 26));
-            energyList.Add(new PowerPlant(150,"KWh",250, 27));
-            energyList.Add(new PowerPlant(200,"KWh", 300, 28));
-            energyList.Add(new PowerPlant(250,"KWh", 350, 29));
-            energyList.Add(new PowerPlant(300, "Kwh", 400, 30));
+            energyList.Add(new PowerPlant("100 KWh of energy", 200, 26));
+            energyList.Add(new PowerPlant("150 KWh of energy",250, 27));
+            energyList.Add(new PowerPlant("200 KWh of energy", 300, 28));
+            energyList.Add(new PowerPlant("250 KWh of energy", 350, 29));
+            energyList.Add(new PowerPlant("300 Kwh of energy", 400, 30));
             // Type your username and press enter
             Console.WriteLine("Create password");
-
+            // the following lines of code is for password.
             //Create a string variable and get us1er input from the keyboard and store it in the variable
             string password = Console.ReadLine();
 
@@ -416,7 +417,7 @@ namespace jul19
                     {
                         foreach (var energy in energyList)
                         {
-                            Console.WriteLine("Energy: {0} {1} Price: {2} Item Number: {3}", energy.AmountInKWh, energy.UnitOfmeasurement, energy.Price, energy.ItemNum);
+                            Console.WriteLine("Energy: {0} {1} Price: {2} Item Number: {3}", energy.Name, energy.Price, energy.ItemNum);
                         }  
                         Console.WriteLine("How much energy would you like? Please Write the item number.");
                         userInput6 = Console.ReadLine();                        
@@ -424,7 +425,7 @@ namespace jul19
                         
                             if (userInput6 == "26")
                         {
-                            Console.WriteLine("You have bought this item: " + energyList[0].AmountInKWh+ " " +energyList[0].UnitOfmeasurement);
+                            Console.WriteLine("You have bought this item: " + energyList[0].Name);
                             Console.WriteLine("Do you want to buy more energy?");
                             userInputE = Console.ReadLine();                            
                             if (userInputE == "No")
@@ -434,7 +435,7 @@ namespace jul19
                         }
                         else if (userInput6 == "27")
                         {
-                            Console.WriteLine("You have bought this item: " + energyList[1].AmountInKWh+ " " +energyList[1].UnitOfmeasurement);
+                            Console.WriteLine("You have bought this item: " + energyList[1].Name);
                             Console.WriteLine("Do you want to buy more energy?");
                             userInputE = Console.ReadLine();                           
                              if (userInputE == "No")
@@ -444,7 +445,7 @@ namespace jul19
                         }
                         else if (userInput6 == "28")
                         {
-                            Console.WriteLine("You have bought this item: " + energyList[2].AmountInKWh+ " " +energyList[2].UnitOfmeasurement);
+                            Console.WriteLine("You have bought this item: " + energyList[2].Name);
                             Console.WriteLine("Do you want to buy more energy?");
                             userInputE = Console.ReadLine();                            
                             if (userInputE == "No")
@@ -454,7 +455,7 @@ namespace jul19
                         }
                         else if (userInput6 == "29")
                         {
-                            Console.WriteLine("You have bought this item: " + energyList[3].AmountInKWh+ " " +energyList[3].UnitOfmeasurement);
+                            Console.WriteLine("You have bought this item: " + energyList[3].Name);
                             Console.WriteLine("Do you want to buy more energy?");
                             userInputE = Console.ReadLine();                            
                             if (userInputE == "No")
@@ -464,7 +465,7 @@ namespace jul19
                         }
                         else if (userInput6 == "30")
                         {
-                            Console.WriteLine("You have bought this item: " + energyList[4].AmountInKWh + " " +energyList[4].UnitOfmeasurement);
+                            Console.WriteLine("You have bought this item: " + energyList[4].Name);
                             Console.WriteLine("Do you want to buy more energy?");
                             userInputE = Console.ReadLine();
                             if (userInputE == "No")
