@@ -108,12 +108,9 @@ namespace jul19
                         Console.WriteLine("What would you like to search?");
                         sSearch = Console.ReadLine();
                    
-                        Computer oFound = compList.Find(comp => compList[5].Equals(sSearch)); //contain method   
-                         Inputkey = Console.ReadLine();
-                        if (InputKey((compList[5].Keywords));
-                        (compList[5].Keywords.Contains(Keywords)){
-                            Console.WriteLine(compList[6].Name,compList[6].Price);
-                        }
+                        Computer oFound = compList.Find(comp => compList[5].Equals(sSearch)); //for computer name   
+                        Inputkey = Console.ReadLine();
+                        if(compList[5].Keywords.Contains(Keywords))
 
 
                         if (oFound != null)
