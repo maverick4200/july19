@@ -114,7 +114,7 @@ namespace jul19
                         
                         
 
-                        Computer oFound = compList.Find(comp => comp.Color.Equals(sSearch)); //for computer name    
+                        Computer oFound = compList.Find(comp => comp.Name.Equals(sSearch)); //for computer name    
                         if (oFound != null)
                         {
                             Console.WriteLine("Found it: " + oFound.getData());
