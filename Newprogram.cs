@@ -11,12 +11,13 @@ namespace jul19
             List<Book> bookList = new List<Book>();
             List<PowerPlant> energyList = new List<PowerPlant>();
             //laptops             
-            compList.Add(new Computer("MacBook Air",900, "Apple", "New with M1 chip", "2021", 1)); //index 0
-            compList.Add(new Computer("Surface Pro", 1400, "Windows", "laptop and tablet in one","2021", 2)); //index 1
-            compList.Add(new Computer("Microsoft", 600, "Windows", "Touch screen ", "2020", 3)); //index 2
-            compList.Add(new Computer("Razer Blade 15", 2700, "Windows","Advanced laptop w/ RTX 2070", "2021", 4)); // index 3
-            compList.Add(new Computer("HP Envy", 1029 , "Window", "11th Generation Intel", "2019", 5)); // index 4
-            compList.Add(new Computer("Asus ROG Zephyrus", 1500, "Windows", "5700xt + Ryzen 5600x", "2021", 6));;  // index 5           
+            compList.Add(new Computer("MacBook Air","rose gold",900, "Apple", "New with M1 chip", "2021", 1)); 
+            compList.Add(new Computer("Surface Pro",  "red", 700, "Windows", "laptop and tablet in one","2021", 2)); 
+            compList.Add(new Computer("Microsoft", "black",600, "Windows", "Touch screen ", "2020", 3)); 
+            compList.Add(new Computer("Razer Blade 15", "blue", 700, "Windows","Advanced laptop w/ RTX 2070", "2021", 4)); 
+            compList.Add(new Computer("HP Envy"," pink", 529 , "Window", "11th Generation Intel", "2019", 5)); 
+            compList.Add(new Computer("Asus ROG Zephyrus","silver", 500, "Windows", "5700xt + Ryzen 5600x", "2021", 6)); 
+            //compList[5].Keywords = new List<string>() {"silver", "Windows", "AMD", "black", "red", "rose gold", "blue", "pink", "Apple" }; //no limit        
             //basketball game tickets
             basketList.Add(new Basketball("Chicago Bulls vs Phoenix Suns", 250, "July 30", 109, 30, 7));
             basketList.Add(new Basketball("phoenix suns vs Bucks", 150, "August 2", 80, 20, 8));
