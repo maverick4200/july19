@@ -106,15 +106,15 @@ namespace jul19
                         Console.WriteLine("What would you like to search?");
                         sSearch = Console.ReadLine();
                    
-                        Computer oFound = compList.Find(comp => comp.Color.Equals(sSearch)); //for computer name   
-                        /*if (compList.contains(new comp("silver", "Windows", "AMD", "black", "red", "rose gold", "blue", "pink", "Apple))  
-                            
+                        if (compList.Contains(new comp("silver", "Windows", "AMD", "black", "red", "rose gold", "blue", "pink", "Apple"))  
+                        {
+
+                        }
                         
                         
-                        */
+                        
 
-
-
+                        Computer oFound = compList.Find(comp => comp.Color.Equals(sSearch)); //for computer name    
                         if (oFound != null)
                         {
                             Console.WriteLine("Found it: " + oFound.getData());
