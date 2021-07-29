@@ -18,5 +18,8 @@ public class Basketball: StoreItem {
     }public string getData(){
         return Name + Price + Date + Section + Seat + ItemNum;
     }
+    public string getData(){
+        return Name + Price + Date + Section + Seat + ItemNum;
+    }
 
 }
