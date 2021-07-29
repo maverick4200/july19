@@ -15,9 +15,8 @@ public class Basketball: StoreItem {
         this.Section = section;
         this.Seat = seat;
         this.ItemNum = num;
-    }
-    public string getData(){
+    }public string getData(){
         return Name + Price + Date + Section + Seat + ItemNum;
-    }
 
+    }
 }
