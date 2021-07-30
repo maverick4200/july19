@@ -89,7 +89,7 @@ namespace jul19
             string InputSearch; // Input user input search
             string sSearch;
             string InputCart; //Input for cart
-            string Inputkey; // input for keywords
+            //string Inputkey; // input for keywords
            // string Keywords;
             bool endwhile = false; 
             bool endSearch = false;
@@ -111,41 +111,10 @@ namespace jul19
                         Console.WriteLine("What would you like to search?");
                         sSearch = Console.ReadLine();
                    
-                        Computer oFound = compList.Find(comp => compList[5].Keywords.Equals(sSearch)); //for computer name   
-                                                                    
-                        // Inputkey = Console.ReadLine(); //for keyword
-  
-                        // {
-                        // Console.WriteLine(compList[5].Keywords.Contains(compList[5].Color));
-                        // while(compList[5].Keywords.Contains(compList[5].Name + compList[5].Color + compList[5].Price + compList[5].Description));
-                         
-                        // }
-
-                            
-                
-                           
-                        
-                            
-                            
-                                
-                            
-                        
-                         // if(Inputkey = (compList[5].Keywords))
-                          //  if(compList[5].Keywords.Contains(Keywords))
-                            //Console.WriteLine(compList[6].Name,compList[6].Price);
-                           
-                        //if(compList[5].Keywords.Contains(Keywords))
-
-                        Inputkey = Console.ReadLine();
-                        Computer iFound = compList.Find(comp => compList[5].Equals(Inputkey)); //for computer name   
-
-                      //  if(compList[5].Keywords.Contains(Keywords))
-                        sSearch = Console.ReadLine();
-                        //I think this is LINQ
-                       // Computer oFound = compList.Find(comp => comp.Name.Equals(sSearch)); //for computer name    
+                        StoreItem oFound = allItems.Find(item => item.Name.Equals(sSearch));
                         if (oFound != null)
                         {
-                            Console.WriteLine("Found it: " + oFound.getData());
+                            Console.WriteLine("Found it: " + oFound);
                             Console.WriteLine("Would you like to add this item to your cart? Type y for yes or n for no.");
                             userYN = false;
                             while (userYN == false)
@@ -153,7 +122,7 @@ namespace jul19
                                 InputCart = Console.ReadLine();
                                 if (InputCart == "y")
                                 {
-                                    // shopCart.Add(new Cart(oFound.Name, oFound.Price));
+                                    shopCart.AddToCart(oFound);
                                     Console.WriteLine("Item has been added to cart.");
                                     userYN = true;
                                 }
@@ -264,14 +233,6 @@ namespace jul19
                                     Console.WriteLine("Incorrect input. Would you like to add another item to the cart? Type y for yes or n for no.");
                                 }
                             }
-
-                        
-
-
-    
-                          
-                        
-                        
                         {
                             Console.WriteLine("Incorrect input. Please write a valid item number from a book.");
                         }
