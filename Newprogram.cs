@@ -31,7 +31,6 @@ namespace jul19
             allItems.Add(new Basketball("Denver Nuggets vs Utah Jazz", 139, "April 6" ,194, 49, 13));
             allItems.Add(new Basketball("Oklahoma City Thunder vs LA Clippers", 192, "January 3" ,102, 43, 14));
             allItems.Add(new Basketball("San Antoinio Spurs vs Memphis Grizzles", 193, "January 5", 195, 34 ,15)); 
-            
             //books
             allItems.Add(new Book("Hunger Games", 15, "Suzanne Collins", "hardcover",16)); 
             allItems.Add(new Book("The Book Thief", 11, "Markus Zusak", "paperback",17)); 
@@ -43,22 +42,16 @@ namespace jul19
             allItems.Add(new Book("The Hitchhiker's Guide to the Galaxy", 20, "Douglas Adams", "hardcover",23)); 
             allItems.Add(new Book("Giovanni's Room", 30, "James Baldwin","paperback",24)); 
             allItems.Add(new Book("The Hate U Give" , 11, "Angie Thomas","hardcover",25)); 
-        // keywords -> author name, paperback or hard, 
-        
 
-            //powerplant & energy          
+            //energy          
             allItems.Add(new PowerPlant("100 KWh of energy", 200, 26, "test"));
             allItems.Add(new PowerPlant("150 KWh of energy",250, 27, "test"));
             allItems.Add(new PowerPlant("200 KWh of energy", 300, 28, "test"));
             allItems.Add(new PowerPlant("250 KWh of energy", 350, 29, "test"));
             allItems.Add(new PowerPlant("300 Kwh of energy", 400, 30, "test"));
-            // Type your username and press enter
+            //password
             Console.WriteLine("Create password");
-
-            //Create a string variable and get us1er input from the keyboard and store it in the variable
             string password = Console.ReadLine();
-
-            // Print the value of the variable (userName), which will display the input value
             Console.WriteLine("Enter password");
             string userInput = Console.ReadLine();
             if (userInput == password)
@@ -74,20 +67,18 @@ namespace jul19
             Console.WriteLine("Computers");
             Console.WriteLine("Basketball tickets");
             Console.WriteLine("Energy");
-            //Console.WriteLine("Search);
-            string userInput2; // user input for letters based on category
-
+            string userInput2; // user input for categories
             string InputBook; //Input for choosing a book
-            string userInputB; // for B
+            string userInputB; 
             string InputComp; //Input for choosing a computer
-            string userInputC; // for C
+            string userInputC; 
             string InputTicket; //Input for choosing a basketball ticket
-            string userInputT;  //for T
+            string userInputT;  
             string InputEnergy; //Input for choosing energy amount
-            string userInputE;// for energy
+            string userInputE;
             string userInputEnd; //Input for ending the primary while loop
-            string InputSearch; // Input user input search
-            string sSearch;
+            string InputSearch; // Input for search
+            string sSearch; //item to search
             string InputCart; //Input for cart
             bool endwhile = false; 
             bool endSearch = false;
@@ -95,7 +86,7 @@ namespace jul19
             bool endcomp = false;
             bool endTicket = false;
             bool endenergy = false;
-            bool userYN = false; // yes, no?
+            bool userYN = false; //yes no questions
             
            // bool endKey = false;
             while (endwhile == false)
