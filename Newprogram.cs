@@ -169,7 +169,7 @@ namespace jul19
                     }
                 }
                 //books
-                else if (userInput2 == "b" || userInput == "c" || userInput == "e" || userInput == "t")
+                else if (userInput2 == "b" || userInput2 == "c" || userInput2 == "e" || userInput2 == "t")
                 {
                     while (endbook == false)
                     {
@@ -198,7 +198,7 @@ namespace jul19
                         }
                         Console.WriteLine("What would you like to buy? Please write an item number.");
                         InputBook = Console.ReadLine();
-                        var foundItem = allItems.Find(itemToSearch => itemToSearch is Book && itemToSearch.ItemNum.ToString() == InputBook );
+                        var foundItem = allItems.Find(itemToSearch => itemToSearch.ItemNum.ToString() == InputBook );
                         shopCart.AddToCart(foundItem);
                         Console.WriteLine("This item has been added to cart: " + foundItem.Name); 
                         Console.WriteLine("Would you like to add another item to the cart? Type y for yes or n for no.");
