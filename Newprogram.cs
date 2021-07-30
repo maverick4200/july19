@@ -90,7 +90,7 @@ namespace jul19
 
                         if (itemFoundInSearch != null)
                         {
-                            Console.WriteLine("Found it: " + itemFoundInSearch);
+                            Console.WriteLine("Found it: " + itemFoundInSearch.GetData());
                             Console.WriteLine("Would you like to add this item to your cart? Type y for yes or n for no.");
 
                             string InputCart = Console.ReadLine();
@@ -161,7 +161,7 @@ namespace jul19
                             else if (userCategoryInput == "t" && item is Basketball) {
                                 var tempBasketball = (Basketball)item;
                                 //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
-                                Console.WriteLine(tempBasketball.getData());
+                                Console.WriteLine(tempBasketball.GetData());
                             }
                         }
                         Console.WriteLine("What would you like to buy? Please write an item number.");

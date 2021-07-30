@@ -31,5 +31,10 @@ public class StoreItem {
         this.Price = this.Price * 0.70M; 
         return this.Price;
     }
+    
+    public virtual string GetData()
+    {
+        return "Product: " + Name  + "," + "Price: " + Price + ", " + ", Description: " + Description +  ", " + " Item Number: " + ItemNum;
+    }
 
 }

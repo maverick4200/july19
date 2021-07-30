@@ -36,7 +36,6 @@ public class Computer : StoreItem {
     public string getData()
     {
         return "Product: " + Name  + ", Color: " + color + ", Price: " + Price + ", Computer Brand: "+ ComputerBrand + ", Description: " + Description +  ", Release Date: " + ReleaseDate +  ", Item Number: " + ItemNum;
-
     }
 }
 
