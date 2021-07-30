@@ -81,10 +81,10 @@ namespace jul19
             string userInputB; // for B
             string InputComp; //Input for choosing a computer
             string userInputC; // for C
-            string InputTicket; //Input for choosing a basketball ticket
-            string userInputT;  //for T
-            string InputEnergy; //Input for choosing energy amount
-            string userInputE;// for energy
+            //string InputTicket; //Input for choosing a basketball ticket
+            //string userInputT;  //for T
+            //string InputEnergy; //Input for choosing energy amount
+            //string userInputE;// for energy
             string userInputEnd; //Input for ending the primary while loop
             string InputSearch; // Input user input search
             string sSearch;
@@ -235,7 +235,8 @@ namespace jul19
                         {
                             if (item is Book) {
                                 var tempBook = (Book)item;
-                                Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
+                                //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
+                                Console.WriteLine(tempBook.getData());
                             }
                         }
                         Console.WriteLine("What would you like to buy? Please write an item number.");
@@ -307,22 +308,26 @@ namespace jul19
                         }
                     }
                 }
-                //computers
                 else if (userInput2 == "c")
                 {
                     while (endcomp == false)
                     {
-                        foreach (var comp in compList)
+                        foreach (var item in allItems)
                         {
-                            Console.WriteLine("Model: {0}, Price: {1}, Computer Brand: {2}, Description: {3}, ReleaseDate: {4}, Item Number: {5}", comp.Name, comp.Price, comp.ComputerBrand, comp.Description, comp.ReleaseDate, comp.ItemNum);
+                            if (item is Computer) 
+                            {
+                                var tempComp = (Computer)item;
+                                Console.WriteLine(tempComp.getData());
+                            }
                         }
-                        Console.WriteLine("Which computer would you like to buy? Please type an item number.");
+                        Console.WriteLine("What would you like to buy? Please write an item number.");
                         InputComp = Console.ReadLine();
-                        if (InputComp == "1")
+                        var foundItem = allItems.Find(itemToSearch => itemToSearch is Computer && itemToSearch.ItemNum.ToString() == InputComp );
+                        if (foundItem.ItemNum.ToString() == InputComp)
                         {
-                            // shopCart.Add(new Cart(compList[0].Name,compList[0].Price));
-                            Console.WriteLine( "This item has been added to cart: "+ compList[0].Name);
-                            Console.WriteLine("Would you like to add another computer to the cart? Type y for yes or n for no.");
+                            shopCart.AddToCart(foundItem);
+                            Console.WriteLine("This item has been added to cart: " + foundItem.Name); 
+                            Console.WriteLine("Would you like to add another item to the cart? Type y for yes or n for no.");
                             userYN = false;
                             while (userYN == false)
                             {
@@ -339,586 +344,15 @@ namespace jul19
                                 }
                                 else 
                                 {
-                                    Console.WriteLine("Incorrect input. Would you like to add another computer to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        }
-                        // else if (InputComp =="2")
-                        // {
-                        //     shopCart.Add(new Cart(compList[1].Name,compList[1].Price));
-                        //     Console.WriteLine("This item has been added to cart: " + compList[1].Name);  
-                        //     Console.WriteLine("Would you like to add another computer to the cart? Type y for yes or n for no.");
-                        //     userYN = false;
-                        //     while (userYN == false)
-                        //     {
-                        //         userInputC = Console.ReadLine();
-                        //         if (userInputC == "n")
-                        //         {
-                        //             userYN = true;
-                        //             endcomp = true;
-                        //         }
-                        //         else if (userInputC == "y")
-                        //         {
-                        //             userYN = true;
-                        //             endcomp = false;
-                        //         }
-                        //         else 
-                        //         {
-                        //             Console.WriteLine("Incorrect input. Would you like to add another computer to the cart? Type y for yes or n for no.");
-                        //         }
-                        //     }
-                        // }
-                        // else if (InputComp =="3")
-                        // {
-                        //     shopCart.Add(new Cart(compList[2].Name,compList[2].Price));
-                        //     Console.WriteLine("This item has been added to cart: " + compList[2].Name);    
-                        //     Console.WriteLine("Would you like to add another computer to the cart? Type y for yes or n for no.");
-                        //     userYN = false;
-                        //     while (userYN == false)
-                        //     {
-                        //         userInputC = Console.ReadLine();
-                        //         if (userInputC == "n")
-                        //         {
-                        //             userYN = true;
-                        //             endcomp = true;
-                        //         }
-                        //         else if (userInputC == "y")
-                        //         {
-                        //             userYN = true;
-                        //             endcomp = false;
-                        //         }
-                        //         else 
-                        //         {
-                        //             Console.WriteLine("Incorrect input. Would you like to add another computer to the cart? Type y for yes or n for no.");
-                        //         }
-                        //     }
-                        // }
-                        // else if (InputComp =="4")
-                        // {
-                        //     shopCart.Add(new Cart(compList[3].Name,compList[3].Price));
-                        //     Console.WriteLine("This item has been added to cart: " + compList[3].Name);    
-                        //     Console.WriteLine("Would you like to add another computer to the cart? Type y for yes or n for no.");
-                        //     userYN = false;
-                        //     while (userYN == false)
-                        //     {
-                        //         userInputC = Console.ReadLine();
-                        //         if (userInputC == "n")
-                        //         {
-                        //             userYN = true;
-                        //             endcomp = true;
-                        //         }
-                        //         else if (userInputC == "y")
-                        //         {
-                        //             userYN = true;
-                        //             endcomp = false;
-                        //         }
-                        //         else 
-                        //         {
-                        //             Console.WriteLine("Incorrect input. Would you like to add another computer to the cart? Type y for yes or n for no.");
-                        //         }
-                        //     }
-                        // }
-                        // else if (InputComp =="5")
-                        // {
-                        //     shopCart.Add(new Cart(compList[4].Name,compList[4].Price));
-                        //     Console.WriteLine("This item has been added to cart: " + compList[4].Name); 
-                        //     Console.WriteLine("Would you like to add another computer to the cart? Type y for yes or n for no.");
-                        //     userYN = false;
-                        //     while (userYN == false)
-                        //     {
-                        //         userInputC = Console.ReadLine();
-                        //         if (userInputC == "n")
-                        //         {
-                        //             userYN = true;
-                        //             endcomp = true;
-                        //         }
-                        //         else if (userInputC == "y")
-                        //         {
-                        //             userYN = true;
-                        //             endcomp = false;
-                        //         }
-                        //         else 
-                        //         {
-                        //             Console.WriteLine("Incorrect input. Would you like to add another computer to the cart? Type y for yes or n for no.");
-                        //         }
-                        //     }
-                        // }
-                        // else if (InputComp =="6")
-                        // {
-                        //     // shopCart.Add(new Cart(compList[5].Name,compList[5].Price));
-                        //     Console.WriteLine("This item has been added to cart: " + compList[5].Name); 
-                        //     Console.WriteLine("Would you like to add another computer to the cart? Type y for yes or n for no.");
-                        //     userYN = false;
-                        //     while (userYN == false)
-                        //     {
-                        //         userInputC = Console.ReadLine();
-                        //         if (userInputC == "n")
-                        //         {
-                        //             userYN = true;
-                        //             endcomp = true;
-                        //         }
-                        //         else if (userInputC == "y")
-                        //         {
-                        //             userYN = true;
-                        //             endcomp = false;
-                        //         }
-                        //         else 
-                        //         {
-                        //             Console.WriteLine("Incorrect input. Would you like to add another computer to the cart? Type y for yes or n for no.");
-                        //         }
-                        //     }
-                        // }
-                        // else 
-                        // {
-                        //     Console.WriteLine("Incorrect input. Please write a valid item number from a computer.");
-                        // }
-                    }
-                    Console.WriteLine("Are you done shopping for today? Type y for yes or n for no.");
-                    userYN = false;
-                    while (userYN == false)
-                    {
-                        userInputEnd = Console.ReadLine();
-                        if (userInputEnd == "y")
-                        {
-                            Console.WriteLine("Thank you for shopping with us. Here are your items and total:");
-                            Console.WriteLine("--------------------------------------------------------");
-                            Console.WriteLine(String.Format("{0,-45} | {1,-10}", "Item" , "Price" ));
-                            Console.WriteLine("--------------------------------------------------------");
-                            // foreach (var i in shopCart)
-                            // {
-                            //     Console.WriteLine(String.Format("{0,-45} | {1,-10}", i.Name , "$" + i.Price ));
-                            //     total = total + i.Price;
-                            // }
-                            Console.WriteLine("--------------------------------------------------------");
-                            Console.WriteLine("Total: $" + total);
-                            userYN = true;
-                            endwhile = true;
-                        }
-                        else if (userInputEnd == "n")
-                        {
-                            userYN = true;
-                            endwhile = false;
-                        }
-                        else 
-                        {
-                            Console.WriteLine("Incorrect input. Are you done shopping for today? Type y for yes or n for no");
-                        }
-                    }
-                }
-                //basketball tickets
-                else if (userInput2 == "t")
-                { 
-                    while (endTicket == false)
-                    {
-                        foreach (var basket in basketList)
-                        {
-                            Console.WriteLine("Match: {0}, Price: {1}, Date: {2}, Section: {3}, Seat: {4}, Item Number: {5}", basket.Name, basket.Price, basket.Date, basket.Section, basket.Seat, basket.ItemNum);
-                        }       
-                        Console.WriteLine("What basketball ticket would you like? Please write an item number.");
-                        InputTicket = Console.ReadLine();
-                        if (InputTicket == "7")
-                        {
-                            // shopCart.Add(new Cart(basketList[0].Name,basketList[0].Price));
-                            Console.WriteLine("This item has been added to cart: "+basketList[0].Name + " match.");
-                            Console.WriteLine("Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputT = Console.ReadLine();
-                                if (userInputT == "n")
-                                {
-                                    userYN = true;
-                                    endTicket = true;
-                                }
-                                else if (userInputT == "y")
-                                {
-                                    userYN = true;
-                                    endTicket = false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add another basketball to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        }
-                        else if (InputTicket == "8")
-                        {
-                            // shopCart.Add(new Cart(basketList[1].Name,basketList[1].Price));
-                            Console.WriteLine ("This item has been added to cart: " + basketList[1].Name + " match.");
-                            Console.WriteLine("Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputT = Console.ReadLine();
-                                if (userInputT == "n")
-                                {
-                                    userYN = true;
-                                    endTicket = true;
-                                }
-                                else if (userInputT == "y")
-                                {
-                                    userYN = true;
-                                    endTicket= false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        }                    
-                        else if (InputTicket == "9")
-                        {
-                            // shopCart.Add(new Cart(basketList[2].Name,basketList[2].Price));
-                            Console.WriteLine("This item has been added to cart: "+basketList[2].Name + " match.");
-                            Console.WriteLine("Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputT = Console.ReadLine();
-                                if (userInputT == "n")
-                                {
-                                    userYN = true;
-                                    endTicket = true;
-                                }
-                                else if (userInputT == "y")
-                                {
-                                    userYN = true;
-                                    endTicket = false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        }
-                        else if (InputTicket == "10")
-                        {
-                            // shopCart.Add(new Cart(basketList[3].Name,basketList[3].Price));
-                            Console.WriteLine("This item has been added to cart: " + basketList[3].Name + " match.");
-                            Console.WriteLine("Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputT = Console.ReadLine();
-                                if (userInputT== "n")
-                                {
-                                    userYN = true;
-                                    endTicket= true;
-                                }
-                                else if (userInputT == "y")
-                                {
-                                    userYN = true;
-                                    endTicket = false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        }
-                        else if (InputTicket == "11")
-                        {
-                            // shopCart.Add(new Cart(basketList[4].Name,basketList[4].Price));
-                            Console.WriteLine("This item has been added to cart: "+basketList[4].Name + " match.");
-                            Console.WriteLine("Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputT = Console.ReadLine();
-                                if (userInputT == "n")
-                                {
-                                    userYN = true;
-                                    endTicket = true;
-                                }
-                                else if (userInputT == "y")
-                                {
-                                    userYN = true;
-                                    endTicket = false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        }
-                        else if (InputTicket == "12")
-                        {
-                            // shopCart.Add(new Cart(basketList[5].Name,basketList[5].Price));
-                            Console.WriteLine("This item has been added to cart: "+basketList[5].Name + " match.");
-                            Console.WriteLine("Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputT = Console.ReadLine();
-                                if (userInputT == "n")
-                                {
-                                    userYN = true;
-                                    endTicket = true;
-                                }
-                                else if (userInputT == "y")
-                                {
-                                    userYN = true;
-                                    endTicket = false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        }
-                        else if (InputTicket == "13")
-                        {
-                            // shopCart.Add(new Cart(basketList[6].Name,basketList[6].Price));
-                            Console.WriteLine("This item has been added to cart: "+basketList[6].Name + " match.");
-                            Console.WriteLine("Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputT = Console.ReadLine();
-                                if (userInputT == "n")
-                                {
-                                    userYN = true;
-                                    endTicket= true;
-                                }
-                                else if (userInputT == "y")
-                                {
-                                    userYN = true;
-                                    endTicket= false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        }
-                        else if (InputTicket == "14")
-                        {
-                            // shopCart.Add(new Cart(basketList[7].Name,basketList[7].Price));
-                            Console.WriteLine("This item has been added to cart: "+basketList[7].Name + " match.");
-                            Console.WriteLine("Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputT = Console.ReadLine();
-                                if (userInputT == "n")
-                                {
-                                    userYN = true;
-                                    endTicket = true;
-                                }
-                                else if (userInputT == "y")
-                                {
-                                    userYN = true;
-                                    endTicket = false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        }
-                        else if (InputTicket == "15") 
-                        {
-                            // shopCart.Add(new Cart(basketList[8].Name,basketList[8].Price));
-                            Console.WriteLine("This item has been added to cart: "+basketList[8].Name + " match.");
-                            Console.WriteLine("Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputT = Console.ReadLine();
-                                if (userInputT == "n")
-                                {
-                                    userYN = true;
-                                    endTicket = true;
-                                }
-                                else if (userInputT == "y")
-                                {
-                                    userYN = true;
-                                    endTicket= false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add another basketball ticket to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        } 
-                        else 
-                        {
-                            Console.WriteLine("Incorrect input. Please write a valid item number from a basketball ticket.");
-                        }
-                    }
-                    Console.WriteLine("Are you done shopping for today? Type y for yes or n for no.");
-                    userYN = false;
-                    while (userYN == false)
-                    {
-                        userInputEnd = Console.ReadLine();
-                        if (userInputEnd == "y")
-                        {
-                            Console.WriteLine("Thank you for shopping with us. Here are your items and total:");
-                            Console.WriteLine("--------------------------------------------------------");
-                            Console.WriteLine(String.Format("{0,-45} | {1,-10}", "Item" , "Price" ));
-                            Console.WriteLine("--------------------------------------------------------");
-                            // foreach (var i in shopCart)
-                            // {
-                            //     Console.WriteLine(String.Format("{0,-45} | {1,-10}", i.Name , "$" + i.Price ));
-                            //     total = total + i.Price;
-                            // }
-                            Console.WriteLine("--------------------------------------------------------");
-                            Console.WriteLine("Total: $" + total);
-                            userYN = true;
-                            endwhile = true;
-                        }
-                        else if (userInputEnd == "n")
-                        {
-                            userYN = true;
-                            endwhile = false;
-                        }
-                        else 
-                        {
-                            Console.WriteLine("Incorrect input. Are you done shopping for today? Type y for yes or n for no");
-                        }
-                    }
-                }
-                //energy
-                else if (userInput2 == "e")
-                {
-                    while (endenergy == false)
-                    {
-                        foreach (var energy in energyList)
-                        {
-                            Console.WriteLine("Energy: {0} Price: {1} Item Number: {2}", energy.Name, energy.Price, energy.ItemNum);
-                        }  
-                        Console.WriteLine("How much energy would you like? Please Write the item number.");
-                        InputEnergy = Console.ReadLine();                        
-                        if (InputEnergy == "26")
-                        {
-                            // shopCart.Add(new Cart(energyList[0].Name,energyList[0].Price));
-                            Console.WriteLine("This item has been added to cart: " + energyList[0].Name);
-                            Console.WriteLine("Would you like to add more energy to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputE = Console.ReadLine();                            
-                                if (userInputE == "n")
-                                {
-                                    userYN = true;
-                                    endenergy = true;
-                                }
-                                else if (userInputE == "y")
-                                {
-                                    userYN = true;
-                                    endenergy = false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add more energy to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        }
-                        else if (InputEnergy == "27")
-                        {
-                            // shopCart.Add(new Cart(energyList[1].Name,energyList[1].Price));
-                            Console.WriteLine("This item has been added to cart: " + energyList[1].Name);
-                            Console.WriteLine("Would you like to add more energy to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputE = Console.ReadLine();                            
-                                if (userInputE == "n")
-                                {
-                                    userYN = true;
-                                    endenergy = true;
-                                }
-                                else if (userInputE == "y")
-                                {
-                                    userYN = true;
-                                    endenergy = false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add more energy to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        }
-                        else if (InputEnergy == "28")
-                        {
-                            // shopCart.Add(new Cart(energyList[2].Name,energyList[2].Price));
-                            Console.WriteLine("This item has been added to cart: " + energyList[2].Name);
-                            Console.WriteLine("Would you like to add more energy to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputE = Console.ReadLine();                            
-                                if (userInputE == "n")
-                                {
-                                    userYN = true;
-                                    endenergy = true;
-                                }
-                                else if (userInputE == "y")
-                                {
-                                    userYN = true;
-                                    endenergy = false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add more energy to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        }
-                        else if (InputEnergy == "29")
-                        {
-                            // shopCart.Add(new Cart(energyList[3].Name,energyList[3].Price));
-                            Console.WriteLine("This item has been added to cart: " + energyList[3].Name);
-                            Console.WriteLine("Would you like to add more energy to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputE = Console.ReadLine();                            
-                                if (userInputE == "n")
-                                {
-                                    userYN = true;
-                                    endenergy = true;
-                                }
-                                else if (userInputE == "y")
-                                {
-                                    userYN = true;
-                                    endenergy = false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add more energy to the cart? Type y for yes or n for no.");
-                                }
-                            }
-                        }
-                        else if (InputEnergy == "30")
-                        {
-                            // shopCart.Add(new Cart(energyList[4].Name,energyList[4].Price));
-                            Console.WriteLine("This item has been added to cart: " + energyList[4].Name);
-                            Console.WriteLine("Would you like to add more energy to the cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                userInputE = Console.ReadLine();                            
-                                if (userInputE == "n")
-                                {
-                                    userYN = true;
-                                    endenergy = true;
-                                }
-                                else if (userInputE == "y")
-                                {
-                                    userYN = true;
-                                    endenergy = false;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add more energy to the cart? Type y for yes or n for no.");
+                                    Console.WriteLine("Incorrect input. Would you like to add another item to the cart? Type y for yes or n for no.");
                                 }
                             }
                         }
                         else
                         {
-                            Console.WriteLine("Incorrect input. Please write a valid item number from energy.");
+                            Console.WriteLine("Invalid item number.");
                         }
-                    }
+                    } 
                     Console.WriteLine("Are you done shopping for today? Type y for yes or n for no.");
                     userYN = false;
                     while (userYN == false)
@@ -930,11 +364,11 @@ namespace jul19
                             Console.WriteLine("--------------------------------------------------------");
                             Console.WriteLine(String.Format("{0,-45} | {1,-10}", "Item" , "Price" ));
                             Console.WriteLine("--------------------------------------------------------");
-                            // foreach (var i in shopCart)
-                            // {
-                            //     Console.WriteLine(String.Format("{0,-45} | {1,-10}", i.Name , "$" + i.Price ));
-                            //     total = total + i.Price;
-                            // }
+                        // foreach (var i in shopCart)
+                        // {
+                        //     Console.WriteLine(String.Format("{0,-45} | {1,-10}", i.Name , "$" + i.Price ));
+                        //     total = total + i.Price;
+                        // }
                             Console.WriteLine("--------------------------------------------------------");
                             Console.WriteLine("Total: $" + total);
                             userYN = true;
@@ -951,11 +385,8 @@ namespace jul19
                         }
                     }
                 }
-                else 
-                {
-                    Console.WriteLine("Incorrect input.");
-                }
             }
-        }                        
-    }
+        }
+    }                        
 }
+
