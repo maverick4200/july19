@@ -27,6 +27,6 @@ public class Basketball: StoreItem {
     }
     
     public override string GetData(){
-        return Name + Price + Date + Section + Seat + ItemNum;
+        return "Match: " + Name + ", Price: " +Price + ", Date: " + Date + ", Section: " + Section + ", Seat: " + Seat + ", Item Number: " + ItemNum;
     }
 }
