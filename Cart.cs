@@ -1,7 +1,15 @@
-public class Cart : StoreItem {
-    public Cart(string name, decimal price)
+using System.Collections.Generic;
+
+public class Cart {
+
+    List<StoreItem> storeItemsToPurchase;
+    
+    public Cart()
     {
-        this.Name = name;
-        this.Price = price;
+        storeItemsToPurchase = new List<StoreItem>();
+    }
+
+    public void AddToCart(StoreItem itemToAdd) {
+        storeItemsToPurchase.Add(itemToAdd);
     }
 }

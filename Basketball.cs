@@ -8,14 +8,26 @@ public class Basketball: StoreItem {
     public int Seat { get => seat; set => seat = value; }
 
 
-    public Basketball(string teams, decimal price, string date, int section, int seat, int num){
-        this.Name = teams;
-        this.Price = price;
+    public Basketball(
+        string teams, 
+        decimal price, 
+        string date, 
+        int section, 
+        int seat, 
+        int num
+    ) 
+    : base (
+        price, 
+        teams, 
+        date + " " + section.ToString() + " " + seat.ToString(),
+        num
+    ) {
         this.Date = date;
         this.Section = section;
         this.Seat = seat;
-        this.ItemNum = num;
-    }public string getData(){
+    }
+    
+    public string getData(){
         return Name + Price + Date + Section + Seat + ItemNum;
 
     }
