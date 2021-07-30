@@ -111,7 +111,7 @@ namespace jul19
                         sSearch = Console.ReadLine();
                     
                         //old code moved to the bottom of file
-                        StoreItem oFound = allItems.Find(item => item.Name.Equals(sSearch)); //for computer name    
+                        StoreItem oFound = allItems.Find(item => item.Name.Equals(sSearch));  
                         if (oFound != null)
                         {
                             Console.WriteLine("Found it: " + oFound);

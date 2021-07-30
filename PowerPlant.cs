@@ -1,22 +1,5 @@
 public class PowerPlant : StoreItem {
 
-
-
-    //double cost; //cost per kWh
-
-    //encapsulation
-    /*public int NumOfWorkers { get => numOfWorkers; set => numOfWorkers = value; }
-    public bool Open { get => open; set => open = value; }
-    public double Energy { get => energy; set => energy = value; }
-    public double Cost { get => cost; set => cost = value; }
-    */
-
-    
-//encapsulation
-
-
-    //constructor2
-
     //constructor
 
     public PowerPlant(
