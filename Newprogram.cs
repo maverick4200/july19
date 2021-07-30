@@ -42,7 +42,7 @@ namespace jul19
             allItems.Add(new Book("The Hitchhiker's Guide to the Galaxy", 20, "Douglas Adams", "hardcover",23)); 
             allItems.Add(new Book("Giovanni's Room", 30, "James Baldwin","paperback",24)); 
             allItems.Add(new Book("The Hate U Give" , 11, "Angie Thomas","hardcover",25)); 
-        // keywords -> author name, paperback or hard, 
+            // keywords -> author name, paperback or hard, 
         
 
             //powerplant & energy          
@@ -109,42 +109,12 @@ namespace jul19
                     {
                         Console.WriteLine("What would you like to search?");
                         sSearch = Console.ReadLine();
-                   
-                        Computer oFound = compList.Find(comp => compList[5].Keywords.Equals(sSearch)); //for computer name   
-                                                                    
-                        // Inputkey = Console.ReadLine(); //for keyword
-  
-                        // {
-                        // Console.WriteLine(compList[5].Keywords.Contains(compList[5].Color));
-                        // while(compList[5].Keywords.Contains(compList[5].Name + compList[5].Color + compList[5].Price + compList[5].Description));
-                         
-                        // }
-
-                            
-                
-                           
-                        
-                            
-                            
-                                
-                            
-                        
-                         // if(Inputkey = (compList[5].Keywords))
-                          //  if(compList[5].Keywords.Contains(Keywords))
-                            //Console.WriteLine(compList[6].Name,compList[6].Price);
-                           
-                        //if(compList[5].Keywords.Contains(Keywords))
-
-                        Inputkey = Console.ReadLine();
-                        Computer iFound = compList.Find(comp => compList[5].Equals(Inputkey)); //for computer name   
-
-                      //  if(compList[5].Keywords.Contains(Keywords))
-                        sSearch = Console.ReadLine();
-                        //I think this is LINQ
-                       // Computer oFound = compList.Find(comp => comp.Name.Equals(sSearch)); //for computer name    
+                    
+                        //old code moved to the bottom of file
+                        StoreItem oFound = allItems.Find(item => item.Name.Equals(sSearch)); //for computer name    
                         if (oFound != null)
                         {
-                            Console.WriteLine("Found it: " + oFound.getData());
+                            Console.WriteLine("Found it: " + oFound);
                             Console.WriteLine("Would you like to add this item to your cart? Type y for yes or n for no.");
                             userYN = false;
                             while (userYN == false)
@@ -152,7 +122,7 @@ namespace jul19
                                 InputCart = Console.ReadLine();
                                 if (InputCart == "y")
                                 {
-                                    // shopCart.Add(new Cart(oFound.Name, oFound.Price));
+                                    shopCart.AddToCart(oFound);
                                     Console.WriteLine("Item has been added to cart.");
                                     userYN = true;
                                 }
@@ -303,6 +273,32 @@ namespace jul19
                 }
             }
         }
+    }                        
+}
+
+
+
+
+
+
+    //old code                                        
+                        // Inputkey = Console.ReadLine(); //for keyword
+  
+                        // {
+                        // Console.WriteLine(compList[5].Keywords.Contains(compList[5].Color));
+                        // while(compList[5].Keywords.Contains(compList[5].Name + compList[5].Color + compList[5].Price + compList[5].Description));
+                         
+                        // }
+                         // if(Inputkey = (compList[5].Keywords))
+                          //  if(compList[5].Keywords.Contains(Keywords))
+                            //Console.WriteLine(compList[6].Name,compList[6].Price);
+                           
+                        //if(compList[5].Keywords.Contains(Keywords))
+
+                        //Inputkey = Console.ReadLine();
+                        //StoreItem iFound = allItems.Find(x => allItems.Equals(Inputkey)); //for computer name   
+
+                      //  if(compList[5].Keywords.Contains(Keywords))
                 //computers
                 // else if (userInput2 == "c")
                 // {
@@ -951,5 +947,4 @@ namespace jul19
                 // {
                 //     Console.WriteLine("Incorrect input.");
                 // }
-    }                        
-}
+
