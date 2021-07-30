@@ -89,8 +89,6 @@ namespace jul19
             string InputSearch; // Input user input search
             string sSearch;
             string InputCart; //Input for cart
-            //string Inputkey; // input for keywords
-           // string Keywords;
             bool endwhile = false; 
             bool endSearch = false;
             bool endbook = false;
