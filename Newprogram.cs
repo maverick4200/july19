@@ -263,10 +263,7 @@ namespace jul19
                                 }
                             }
                             
-                            else 
-
-                        
-                        
+                        else 
                         {
                             Console.WriteLine("Incorrect input. Please write a valid item number from a book.");
                         }
