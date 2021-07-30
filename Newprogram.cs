@@ -9,6 +9,7 @@ namespace jul19
             Cart shopCart = new Cart();
             List<StoreItem> allItems = new List<StoreItem>();
 
+            #region Create Store Items
             //laptops             
             allItems.Add(new Computer("MacBook Air","rose gold",900, "Apple", "New with M1 chip", "2021", 1)); 
             allItems.Add(new Computer("Surface Pro",  "red", 700, "Windows", "laptop and tablet in one","2021", 2)); 
@@ -46,6 +47,8 @@ namespace jul19
             allItems.Add(new PowerPlant("250 KWh of energy", 350, 29, "test"));
             allItems.Add(new PowerPlant("300 Kwh of energy", 400, 30, "test"));
             
+            #endregion
+
             //password
             Console.WriteLine("Create password");
             string password = Console.ReadLine();
@@ -67,104 +70,76 @@ namespace jul19
             Console.WriteLine("Basketball tickets");
             Console.WriteLine("Energy");
             string userCategoryInput; 
-            string InputBook; //Input for choosing a book
-            string userInputB; 
-            string userInputEnd; //Input for ending the primary while loop
-            string InputSearch; // Input for search
-            string sSearch; //item to search
-            string InputCart; //Input for cart
-            bool endwhile = false; 
-            bool endSearch = false;
-            bool endbook = false;
-            bool endcomp = false;
-            bool endTicket = false;
-            bool endenergy = false;
-            bool userYN = false; //yes no questions
-            
-           // bool endKey = false;
-            while (endwhile == false)
+            bool userIsStillShopping = true;
+            bool userIsStillSearching;
+            string userSearchInput;
+           
+            while (userIsStillShopping)
             {
                 Console.WriteLine("Which item category do you want? Type b for books, c for computers, e for energy, or t for basketball tickets. You can also press s to search a specific product.");
                 userCategoryInput = Console.ReadLine();
                 if (userCategoryInput == "s")
                 {
-                    while (endSearch == false)
+                    userIsStillSearching = true;
+                    while (userIsStillSearching)
                     {
                         Console.WriteLine("What would you like to search?");
-                        sSearch = Console.ReadLine();
+                        userSearchInput = Console.ReadLine();
                    
-                        StoreItem oFound = allItems.Find(item => item.Name.Equals(sSearch));
-                        if (oFound != null)
-                        {
-                            Console.WriteLine("Found it: " + oFound);
-                            Console.WriteLine("Would you like to add this item to your cart? Type y for yes or n for no.");
-                            userYN = false;
-                            while (userYN == false)
-                            {
-                                InputCart = Console.ReadLine();
-                                if (InputCart == "y")
-                                {
-                                    shopCart.AddToCart(oFound);
-                                    Console.WriteLine("Item has been added to cart.");
-                                    userYN = true;
-                                }
-                                else if (InputCart == "n")
-                                {
-                                    userYN = true;
-                                }
-                                else 
-                                {
-                                    Console.WriteLine("Incorrect input. Would you like to add this item to your cart? Type y for yes or n for no.");
-                                }
+                        StoreItem itemFoundInSearch = allItems.Find(item => item.Name.Equals(userSearchInput));
 
+                        if (itemFoundInSearch != null)
+                        {
+                            Console.WriteLine("Found it: " + itemFoundInSearch);
+                            Console.WriteLine("Would you like to add this item to your cart? Type y for yes or n for no.");
+
+                            string InputCart = Console.ReadLine();
+                            if (InputCart == "y")
+                            {
+                                shopCart.AddToCart(itemFoundInSearch);
+                                Console.WriteLine("Item has been added to your cart.");
+                            }
+                            else if (InputCart == "n")
+                            {
+                                Console.WriteLine("This item has not been added to your cart.");
+                            }
+                            else 
+                            {
+                                Console.WriteLine("Incorrect input.  The item was not added to your cart.");
                             }
                         }
                         else
                         { 
-                            Console.WriteLine("Not found");
+                            Console.WriteLine("The item was not found.  Nothing was added to your cart.");
                         }
 
                         Console.WriteLine("Would you like to keep searching? Type y for yes or n for no");
-                        userYN = false;
-                        while (userYN == false)
+                        bool didUserEnterValidInputForCartItem = false;
+                        while (didUserEnterValidInputForCartItem == false)
                         {
-                            InputSearch = Console.ReadLine();
+                            string InputSearch = Console.ReadLine();
                             if (InputSearch == "n")
                             {
-                                endSearch = true;
-                                userYN = true;
+                                userIsStillSearching = false;
+                                didUserEnterValidInputForCartItem = true;
                             }
                             else if (InputSearch == "y")
                             {
-                                endSearch = false;
-                                userYN = true;
+                                userIsStillSearching = true;
+                                didUserEnterValidInputForCartItem = true;
                             }
                             else 
                             {
                                 Console.WriteLine("Incorrect input. Would you like to keep searching? Type y for yes or n for no.");
+                                didUserEnterValidInputForCartItem = false;
                             }
                         }
                     }
-                    Console.WriteLine("Are you done shopping for today? Type y for yes or n for no.");
-                    userYN = false;
-                    while (userYN == false)
-                    {
-                        userInputEnd = Console.ReadLine();
-                        if (userInputEnd == "n")
-                        {
-                            userYN = true;
-                            endwhile = false;
-                        }
-                        else 
-                        {
-                            Console.WriteLine("Incorrect input. Are you done shopping for today? Type y for yes or n for no");
-                        }
-                    }
                 }
-                //books
                 else if (userCategoryInput == "b" || userCategoryInput == "c" || userCategoryInput == "e" || userCategoryInput == "t")
                 {
-                    while (endbook == false)
+                    bool userIsStillAddingItemsFromMenu = true;
+                    while (userIsStillAddingItemsFromMenu)
                     {
                         foreach (var item in allItems)
                         {
@@ -190,54 +165,62 @@ namespace jul19
                             }
                         }
                         Console.WriteLine("What would you like to buy? Please write an item number.");
-                        InputBook = Console.ReadLine();
-                        var foundItem = allItems.Find(itemToSearch => itemToSearch.ItemNum.ToString() == InputBook );
-                        shopCart.AddToCart(foundItem);
-                        Console.WriteLine("This item has been added to cart: " + foundItem.Name); 
-                        Console.WriteLine("Would you like to add another item to the cart? Type y for yes or n for no.");
-                        userYN = false;
-                            while (userYN == false)
+                        string itemNumberTheUserChose = Console.ReadLine();
+                        var foundItem = allItems.Find(itemToSearch => itemToSearch.ItemNum.ToString() == itemNumberTheUserChose);
+                        if (foundItem != null) {
+                            shopCart.AddToCart(foundItem);
+                            
+                            Console.WriteLine("This item has been added to cart: " + foundItem.Name); 
+                            Console.WriteLine("Would you like to add another item to the cart? Type y for yes or n for no.");
+                            
+                            bool didUserEnterValidInputForFoundItem = false;
+                            while (didUserEnterValidInputForFoundItem == false)
                             {
-                                userInputB = Console.ReadLine();
-                                if (userInputB == "n")
+                                string doesUserWantToAddAnotherItem = Console.ReadLine();
+                                if (doesUserWantToAddAnotherItem == "n")
                                 {
-                                    userYN = true;
-                                    endbook = true;
+                                    didUserEnterValidInputForFoundItem = true;
+                                    userIsStillAddingItemsFromMenu = false;
                                 }
-                                else if (userInputB == "y")
+                                else if (doesUserWantToAddAnotherItem == "y")
                                 {
-                                    userYN = true;
-                                    endbook = false;
+                                    didUserEnterValidInputForFoundItem = true;
+                                    userIsStillAddingItemsFromMenu = true;
                                 }
                                 else 
                                 {
                                     Console.WriteLine("Incorrect input. Would you like to add another item to the cart? Type y for yes or n for no.");
+                                    didUserEnterValidInputForFoundItem = false;
                                 }
                             }
-                        {
+                        }
+                        else {
                             Console.WriteLine("Incorrect input. Please write a valid item number from a book.");
                         }
                     }
-                    Console.WriteLine("Are you done shopping for today? Type y for yes or n for no.");
-                    userYN = false;
-                    while (userYN == false)
+                }
+                else {
+                    Console.WriteLine("You did not make a valid selection.");
+                }
+                Console.WriteLine("Are you done shopping for today? Type y for yes or n for no.");
+                bool didUserEnterValidInput = false;
+                while (didUserEnterValidInput == false) {
+                    string doneShoppingInput = Console.ReadLine();
+                    if (doneShoppingInput == "y")
                     {
-                        userInputEnd = Console.ReadLine();
-                        if (userInputEnd == "y")
-                        {
-                            shopCart.PrintItems();
-                            userYN = true;
-                            endwhile = true;
-                        }
-                        else if (userInputEnd == "n")
-                        {
-                            userYN = true;
-                            endwhile = false;
-                        }
-                        else 
-                        {
-                            Console.WriteLine("Incorrect input. Are you done shopping for today? Type y for yes or n for no");
-                        }
+                        shopCart.PrintItems();
+                        didUserEnterValidInput = true;
+                        userIsStillShopping = false;
+                    }
+                    else if (doneShoppingInput == "n")
+                    {
+                        didUserEnterValidInput = true;
+                        userIsStillShopping = true;
+                    }
+                    else 
+                    {
+                        Console.WriteLine("Incorrect input. Are you done shopping for today? Type y for yes or n for no");
+                        didUserEnterValidInput = true;
                     }
                 }
             }
