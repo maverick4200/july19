@@ -28,7 +28,7 @@ public class Book : StoreItem {
     }
     public override string GetData() 
     {
-        return "Title: " + Name + ", Author: " + author + ", Cover: " + cover + ", Price: " + Price + ", Item Number: " + ItemNum;
+        return "Title: " + Name + ", Author: " + Author + ", Cover: " + Cover + ", Price: " + Price + ", Item Number: " + ItemNum;
     }
 }
 
