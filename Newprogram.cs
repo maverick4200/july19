@@ -134,8 +134,13 @@ namespace jul19
                            
                         //if(compList[5].Keywords.Contains(Keywords))
 
+                        Inputkey = Console.ReadLine();
+                        Computer iFound = compList.Find(comp => compList[5].Equals(Inputkey)); //for computer name   
 
-                        //Computer oFound = compList.Find(comp => comp.Name.Equals(sSearch)); //for computer name    
+                      //  if(compList[5].Keywords.Contains(Keywords))
+                        sSearch = Console.ReadLine();
+                        //I think this is LINQ
+                       // Computer oFound = compList.Find(comp => comp.Name.Equals(sSearch)); //for computer name    
                         if (oFound != null)
                         {
                             Console.WriteLine("Found it: " + oFound.getData());
