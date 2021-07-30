@@ -6,13 +6,9 @@ namespace jul19
     {
         static void Main(string[] args)
         {
-            decimal total = 0;
             Cart shopCart = new Cart();
             List<StoreItem> allItems = new List<StoreItem>();
-            List<Basketball> basketList = new List<Basketball>();
-            List<Computer> compList = new List<Computer>();
-            List<Book> bookList = new List<Book>();
-            List<PowerPlant> energyList = new List<PowerPlant>();
+
             //laptops             
             allItems.Add(new Computer("MacBook Air","rose gold",900, "Apple", "New with M1 chip", "2021", 1)); 
             allItems.Add(new Computer("Surface Pro",  "red", 700, "Windows", "laptop and tablet in one","2021", 2)); 
@@ -49,6 +45,7 @@ namespace jul19
             allItems.Add(new PowerPlant("200 KWh of energy", 300, 28, "test"));
             allItems.Add(new PowerPlant("250 KWh of energy", 350, 29, "test"));
             allItems.Add(new PowerPlant("300 Kwh of energy", 400, 30, "test"));
+            
             //password
             Console.WriteLine("Create password");
             string password = Console.ReadLine();
@@ -62,20 +59,16 @@ namespace jul19
             {
                 Console.WriteLine("Incorrect password");
             }
+
+            // Menu
             Console.WriteLine("Welcome! This is what we offer");
             Console.WriteLine("Books");
             Console.WriteLine("Computers");
             Console.WriteLine("Basketball tickets");
             Console.WriteLine("Energy");
-            string userInput2; // user input for categories
+            string userCategoryInput; 
             string InputBook; //Input for choosing a book
             string userInputB; 
-            string InputComp; //Input for choosing a computer
-            string userInputC; 
-            string InputTicket; //Input for choosing a basketball ticket
-            string userInputT;  
-            string InputEnergy; //Input for choosing energy amount
-            string userInputE;
             string userInputEnd; //Input for ending the primary while loop
             string InputSearch; // Input for search
             string sSearch; //item to search
@@ -92,8 +85,8 @@ namespace jul19
             while (endwhile == false)
             {
                 Console.WriteLine("Which item category do you want? Type b for books, c for computers, e for energy, or t for basketball tickets. You can also press s to search a specific product.");
-                userInput2 = Console.ReadLine();
-                if (userInput2 == "s")
+                userCategoryInput = Console.ReadLine();
+                if (userCategoryInput == "s")
                 {
                     while (endSearch == false)
                     {
@@ -169,28 +162,28 @@ namespace jul19
                     }
                 }
                 //books
-                else if (userInput2 == "b" || userInput2 == "c" || userInput2 == "e" || userInput2 == "t")
+                else if (userCategoryInput == "b" || userCategoryInput == "c" || userCategoryInput == "e" || userCategoryInput == "t")
                 {
                     while (endbook == false)
                     {
                         foreach (var item in allItems)
                         {
-                            if (userInput2 == "b" && item is Book) {
+                            if (userCategoryInput == "b" && item is Book) {
                                 var tempBook = (Book)item;
                                 //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
                                 Console.WriteLine(tempBook.getData());
                             }
-                            else if (userInput2 == "c" && item is Computer) {
+                            else if (userCategoryInput == "c" && item is Computer) {
                                 var tempComputer = (Computer)item;
                                 //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
                                 Console.WriteLine(tempComputer.getData());
                             }
-                            else if (userInput2 == "e" && item is PowerPlant) {
+                            else if (userCategoryInput == "e" && item is PowerPlant) {
                                 var tempPower = (PowerPlant)item;
                                 //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
                                 Console.WriteLine(tempPower.getData());
                             }
-                            else if (userInput2 == "t" && item is Basketball) {
+                            else if (userCategoryInput == "t" && item is Basketball) {
                                 var tempBasketball = (Basketball)item;
                                 //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
                                 Console.WriteLine(tempBasketball.getData());
