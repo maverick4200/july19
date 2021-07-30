@@ -78,8 +78,8 @@ namespace jul19
 
             string InputBook; //Input for choosing a book
             string userInputB; // for B
-            //string InputComp; //Input for choosing a computer
-            //string userInputC; // for C
+            string InputComp; //Input for choosing a computer
+            string userInputC; // for C
             //string InputTicket; //Input for choosing a basketball ticket
             //string userInputT;  //for T
             //string InputEnergy; //Input for choosing energy amount
@@ -93,7 +93,7 @@ namespace jul19
             bool endwhile = false; 
             bool endSearch = false;
             bool endbook = false;
-            //bool endcomp = false;
+            bool endcomp = false;
             //bool endTicket = false;
             //bool endenergy = false;
             bool userYN = false; // yes, no?
@@ -205,7 +205,8 @@ namespace jul19
                             if (item is Book) 
                             {
                                 var tempBook = (Book)item;
-                                Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
+                                //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
+                                Console.WriteLine(tempBook.getData());
                             }
                         }
                         Console.WriteLine("What would you like to buy? Please write an item number.");
@@ -229,6 +230,83 @@ namespace jul19
                                 {
                                     userYN = true;
                                     endbook = false;
+                                }
+                                else 
+                                {
+                                    Console.WriteLine("Incorrect input. Would you like to add another item to the cart? Type y for yes or n for no.");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid item number.");
+                        }
+                    } 
+                    Console.WriteLine("Are you done shopping for today? Type y for yes or n for no.");
+                    userYN = false;
+                    while (userYN == false)
+                    {
+                        userInputEnd = Console.ReadLine();
+                        if (userInputEnd == "y")
+                        {
+                            Console.WriteLine("Thank you for shopping with us. Here are your items and total:");
+                            Console.WriteLine("--------------------------------------------------------");
+                            Console.WriteLine(String.Format("{0,-45} | {1,-10}", "Item" , "Price" ));
+                            Console.WriteLine("--------------------------------------------------------");
+                        // foreach (var i in shopCart)
+                        // {
+                        //     Console.WriteLine(String.Format("{0,-45} | {1,-10}", i.Name , "$" + i.Price ));
+                        //     total = total + i.Price;
+                        // }
+                            Console.WriteLine("--------------------------------------------------------");
+                            Console.WriteLine("Total: $" + total);
+                            userYN = true;
+                            endwhile = true;
+                        }
+                        else if (userInputEnd == "n")
+                        {
+                            userYN = true;
+                            endwhile = false;
+                        }
+                        else 
+                        {
+                            Console.WriteLine("Incorrect input. Are you done shopping for today? Type y for yes or n for no");
+                        }
+                    }
+                }
+                else if (userInput2 == "c")
+                {
+                    while (endcomp == false)
+                    {
+                        foreach (var item in allItems)
+                        {
+                            if (item is Computer) 
+                            {
+                                var tempComp = (Computer)item;
+                                Console.WriteLine(tempComp.getData());
+                            }
+                        }
+                        Console.WriteLine("What would you like to buy? Please write an item number.");
+                        InputComp = Console.ReadLine();
+                        var foundItem = allItems.Find(itemToSearch => itemToSearch is Computer && itemToSearch.ItemNum.ToString() == InputComp );
+                        if (foundItem.ItemNum.ToString() == InputComp)
+                        {
+                            shopCart.AddToCart(foundItem);
+                            Console.WriteLine("This item has been added to cart: " + foundItem.Name); 
+                            Console.WriteLine("Would you like to add another item to the cart? Type y for yes or n for no.");
+                            userYN = false;
+                            while (userYN == false)
+                            {
+                                userInputC = Console.ReadLine();
+                                if (userInputC == "n")
+                                {
+                                    userYN = true;
+                                    endcomp = true;
+                                }
+                                else if (userInputC == "y")
+                                {
+                                    userYN = true;
+                                    endcomp = false;
                                 }
                                 else 
                                 {
