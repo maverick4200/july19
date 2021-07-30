@@ -86,7 +86,7 @@ namespace jul19
                         Console.WriteLine("What would you like to search?");
                         userSearchInput = Console.ReadLine();
                    
-                        StoreItem itemFoundInSearch = allItems.Find(item => item.Name.Equals(userSearchInput));
+                        StoreItem itemFoundInSearch = allItems.Find(comp => comp.Keywords.Contains(userSearchInput));
 
                         if (itemFoundInSearch != null)
                         {

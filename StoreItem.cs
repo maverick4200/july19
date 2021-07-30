@@ -24,6 +24,7 @@ public class StoreItem {
         this.name = name; 
         this.description = description;
         this.itemNum = itemNum;
+        this.Keywords = new List<string>();
     }
 
     public decimal Calc() {
