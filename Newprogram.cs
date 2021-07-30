@@ -146,17 +146,17 @@ namespace jul19
                             if (userCategoryInput == "b" && item is Book) {
                                 var tempBook = (Book)item;
                                 //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
-                                Console.WriteLine(tempBook.getData());
+                                Console.WriteLine(tempBook.GetData());
                             }
                             else if (userCategoryInput == "c" && item is Computer) {
                                 var tempComputer = (Computer)item;
                                 //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
-                                Console.WriteLine(tempComputer.getData());
+                                Console.WriteLine(tempComputer.GetData());
                             }
                             else if (userCategoryInput == "e" && item is PowerPlant) {
                                 var tempPower = (PowerPlant)item;
                                 //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
-                                Console.WriteLine(tempPower.getData());
+                                Console.WriteLine(tempPower.GetData());
                             }
                             else if (userCategoryInput == "t" && item is Basketball) {
                                 var tempBasketball = (Basketball)item;

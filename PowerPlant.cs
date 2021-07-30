@@ -21,7 +21,7 @@ public class PowerPlant : StoreItem {
     }
 
 
-    public string getData(){
+    public override string GetData(){
         return Name + Price + ItemNum;
     }   
 

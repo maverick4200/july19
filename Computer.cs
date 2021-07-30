@@ -33,7 +33,7 @@ public class Computer : StoreItem {
         this.Color = color;
     } 
 
-    public string getData()
+    public override string GetData()
     {
         return "Product: " + Name  + ", Color: " + color + ", Price: " + Price + ", Computer Brand: "+ ComputerBrand + ", Description: " + Description +  ", Release Date: " + ReleaseDate +  ", Item Number: " + ItemNum;
     }

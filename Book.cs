@@ -26,7 +26,7 @@ public class Book : StoreItem {
     public string storeDisplay(){
             return this.Name = " by " +  author + " in" + cover; 
     }
-    public string getData() 
+    public override string GetData() 
     {
         return this.Name + author + cover + Price + ItemNum;
     }
