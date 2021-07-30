@@ -239,7 +239,7 @@ namespace jul19
                         }
                         Console.WriteLine("What would you like to buy? Please write an item number.");
                         InputBook = Console.ReadLine();
-                        var foundItem = allItems.Find(itemToSearch => itemToSearch.ItemNum.ToString() == InputBook);
+                        var foundItem = allItems.Find(itemToSearch => itemToSearch is Book && itemToSearch.ItemNum.ToString() == InputBook );
                         // if (InputBook == "16")
                         // {
                         //     shopCart.Add(new Cart(bookList[0].Name,bookList[0].Price));
