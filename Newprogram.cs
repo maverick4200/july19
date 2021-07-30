@@ -88,7 +88,7 @@ namespace jul19
             string sSearch;
             string InputCart; //Input for cart
             string Inputkey; // input for keywords
-            string Keywords;
+           // string Keywords;
             bool endwhile = false; 
             bool endSearch = false;
             bool endbook = false;
@@ -96,7 +96,8 @@ namespace jul19
             bool endTicket = false;
             bool endenergy = false;
             bool userYN = false; // yes, no?
-           
+            
+           // bool endKey = false;
             while (endwhile == false)
             {
                 Console.WriteLine("Which item category do you want? Type b for books, c for computers, e for energy, or t for basketball tickets. You can also press s to search a specific product.");
@@ -108,9 +109,30 @@ namespace jul19
                         Console.WriteLine("What would you like to search?");
                         sSearch = Console.ReadLine();
                    
-                        Computer oFound = compList.Find(comp => compList[5].Equals(sSearch)); //for computer name   
-                        Inputkey = Console.ReadLine();
-                        if(compList[5].Keywords.Contains(Keywords))
+                        Computer oFound = compList.Find(comp => compList[5].Keywords.Equals(sSearch)); //for computer name   
+                                                                    
+                         Inputkey = Console.ReadLine(); //for keyword
+  
+                       {
+                        Console.WriteLine(compList[5].Keywords.Contains(compList[5].Color));
+                    while(compList[5].Keywords.Contains(compList[5].Name + compList[5].Color + compList[5].Price + compList[5].Description));
+                         
+                       }
+
+                            
+                
+                           
+                        
+                            
+                            
+                                
+                            
+                        
+                         // if(Inputkey = (compList[5].Keywords))
+                          //  if(compList[5].Keywords.Contains(Keywords))
+                            //Console.WriteLine(compList[6].Name,compList[6].Price);
+                           
+                        //if(compList[5].Keywords.Contains(Keywords))
 
 
                         //Computer oFound = compList.Find(comp => comp.Name.Equals(sSearch)); //for computer name    
