@@ -77,7 +77,7 @@ namespace jul19
             string userInput2; // user input for letters based on category
 
             string InputBook; //Input for choosing a book
-            string userInputB; // for B
+            //string userInputB; // for B
             string InputComp; //Input for choosing a computer
             string userInputC; // for C
             string InputTicket; //Input for choosing a basketball ticket
