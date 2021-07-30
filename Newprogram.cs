@@ -196,16 +196,31 @@ namespace jul19
                     }
                 }
                 //books
-                else if (userInput2 == "b")
+                else if (userInput2 == "b" || userInput == "c" || userInput == "e" || userInput == "t")
                 {
                     while (endbook == false)
                     {
                         foreach (var item in allItems)
                         {
-                            if (item is Book) {
+                            if (userInput2 == "b" && item is Book) {
                                 var tempBook = (Book)item;
                                 //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
                                 Console.WriteLine(tempBook.getData());
+                            }
+                            else if (userInput2 == "c" && item is Computer) {
+                                var tempComputer = (Computer)item;
+                                //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
+                                Console.WriteLine(tempComputer.getData());
+                            }
+                            else if (userInput2 == "e" && item is PowerPlant) {
+                                var tempPower = (PowerPlant)item;
+                                //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
+                                Console.WriteLine(tempPower.getData());
+                            }
+                            else if (userInput2 == "t" && item is Basketball) {
+                                var tempBasketball = (Basketball)item;
+                                //Console.WriteLine("Title: {0}, Price: {1}, Author: {2}, Cover: {3}, Item Number: {4}", tempBook.Name, tempBook.Price, tempBook.Author, tempBook.Cover, tempBook.ItemNum);
+                                Console.WriteLine(tempBasketball.getData());
                             }
                         }
                         Console.WriteLine("What would you like to buy? Please write an item number.");
